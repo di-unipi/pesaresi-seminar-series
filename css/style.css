@@ -1,0 +1,123 @@
+body {
+  background-color: #fafafa;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+#profile {
+  border-radius: 10%;
+  width: 100%;
+}
+
+.poster {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.project {
+  padding-bottom: 20px;
+}
+
+.location {
+  margin-bottom: 0;
+}
+
+.author {
+  margin-bottom: 0;
+}
+
+.emoji {
+  margin-right: 5px;
+}
+
+.abstract {
+  color: #666666;
+}
+
+.next {
+  margin-top: 10px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.me {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width : 576px) {
+    .container {
+      margin-top: 100px;
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    .container {
+      max-width: 80%;
+    }
+}
+
+@media only screen and (min-width : 1350px) {
+    .container {
+      max-width: 1080px;
+    }
+}
+
+a, a:hover {
+  color: #24364e;
+  text-decoration: none;
+}
+
+.ai, .fa, .fab, .fas {
+  color: #444444;
+}
+
+/* mark { */
+/*   color: black; */
+/*   background-color: #cdeedd; */
+/*   padding-top: 0px; */
+/*   padding-bottom: 0px; */
+/* } */
+
+.b {
+  font-weight: bold;
+}
+
+/*
+ * Dark mode
+ * https://colorhunt.co/palette/136567
+ * + #f7d6bf
+ */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222831;
+    color: #eeeeee;
+  }
+
+  a, a:hover {
+    color: #cdeedd;
+  }
+
+  /* mark { */
+  /*   background-color: #f7d6bf; */
+  /*   color: #222831; */
+  /* } */
+
+  .ai, .fa, .fab, .fas {
+    color: #eeeeee;
+  }
+
+  .poster {
+    background-color: #fafafa;
+    padding: 20px;
+  }
+
+  .abstract {
+    color: #bbbbbb;
+  }
+}

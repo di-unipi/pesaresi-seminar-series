@@ -1,0 +1,26 @@
+extends layout.pug
+
+block content
+  .row
+    .col.col-lg-4
+      h1 Mauriana Pesaresi
+      h2 Seminar Series 2021/2022
+    .col.col-lg-8.col-md-auto
+      p
+        | This is a series of seminars organized, ideated and attended by PhD Students in Computer Science (and possibly faculty members) at UniPI.
+        | This seminar series will consist (ideally) of 16+ seminars where students can discuss #[mark open problems in Computer Science], present their recent results and create connections and opportunities for collaborations among them and faculty members.
+      p
+        | University of Pisa requires first-year PhD students the active partecipation to at least the 80% of the proposed seminaries.
+        | The #[mark presence register] is publicly available as a Google Sheets #[a(href="") document].
+        | For any further inquire, you can reach us out at 
+        a(href="mailto:pesaresi@unipi.it")
+        | our #[mark dedicated email].
+  .row.mt-5
+    h2 Next Seminar
+  include next
+  .row.mt-5
+    h2 Upcoming Seminars
+  include past
+  .row.mt-2
+    h2 Past Seminars
+  include past
