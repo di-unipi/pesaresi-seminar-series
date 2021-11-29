@@ -93,31 +93,31 @@ a, a:hover {
  * https://colorhunt.co/palette/136567
  * + #f7d6bf
  */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #222831;
-    color: #eeeeee;
-  }
+/* @media (prefers-color-scheme: dark) { */
+/*   body { */
+/*     background-color: #222831; */
+/*     color: #eeeeee; */
+/*   } */
 
-  a, a:hover {
-    color: #cdeedd;
-  }
+/*   a, a:hover { */
+/*     color: #cdeedd; */
+/*   } */
 
-  /* mark { */
-  /*   background-color: #f7d6bf; */
-  /*   color: #222831; */
-  /* } */
+/*   /1* mark { *1/ */
+/*   /1*   background-color: #f7d6bf; *1/ */
+/*   /1*   color: #222831; *1/ */
+/*   /1* } *1/ */
 
-  .ai, .fa, .fab, .fas {
-    color: #eeeeee;
-  }
+/*   .ai, .fa, .fab, .fas { */
+/*     color: #eeeeee; */
+/*   } */
 
-  .poster {
-    background-color: #fafafa;
-    padding: 20px;
-  }
+/*   .poster { */
+/*     background-color: #fafafa; */
+/*     padding: 20px; */
+/*   } */
 
-  .abstract {
-    color: #bbbbbb;
-  }
-}
+/*   .abstract { */
+/*     color: #bbbbbb; */
+/*   } */
+/* } */
