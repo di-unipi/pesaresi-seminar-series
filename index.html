@@ -5,13 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link href="css/code.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <script src="js/obfuscation.js" defer></script>
-    <script src="js/blog.js" defer></script>
+    <script>
+      f = a => a.replace(/./g, function (c){return String.fromCharCode(c.charCodeAt(0) + 7);})
+      function g(n,m) {
+        p = f(m);
+        console.log(p)
+        n.href = p;
+        n.text = p.slice(p.indexOf(":")+1);
+      }
+      document.addEventListener("DOMContentLoaded", function(){
+        g(document.getElementById('mail_a'), "fZbemh3\\abZkZ'in`eb^l^9ia]'ngbib'bm");
+        g(document.getElementById('mail_b'), "fZbemh3kb\\\\Zk]h'fZllb]]Z9ia]'ngbib'bm");
+      })
+    </script>
   </head>
   <body>
     <div class="container">
@@ -21,18 +29,19 @@
           <h2>Seminar Series 2021/2022</h2>
         </div>
         <div class="col col-lg-8 col-md-auto">
-          <p>
-            This is a series of seminars organized, ideated and attended by PhD Students in Computer Science (and possibly faculty members) at UniPI.
-            This seminar series will consist (ideally) of 16+ seminars where students can discuss 
-            <mark>open problems in Computer Science</mark>, present their recent results and create connections and opportunities for collaborations among them and faculty members.
+          <p>The series of 
+            <mark>seminars</mark> dedicated to the memory of Mauriana Pesaresi is composed of a series of meetings organized and held by Ph.D. students of the 
+            <mark>Computer Science</mark> Department of the University of 
+            <mark>Pisa</mark>.
           </p>
-          <p>
-            University of Pisa requires first-year PhD students the active partecipation to at least the 80% of the proposed seminaries.
-            The 
-            <mark>presence register</mark> is publicly available as a Google Sheets <a href="">document</a>.
-            For any further inquire, you can reach us out at <a href="mailto:pesaresi@unipi.it"></a>our 
-            <mark>dedicated email</mark>.
+          <p>Seminars will be held weekly both remotely and in presence, starting from January 
+            <mark>2022</mark>.
+            Each seminar will be an opportunity for the students to present in public core issues of their 
+            <mark>research</mark>, focusing on 
+            <mark>open problems</mark> and possibly presenting some of their original results.
+            Presentations should last approximately thirty minutes, leaving sufficient time to develop meaningful discussions.
           </p>
+          <p>For any further information, you can reach us out at <a id="mail_a"></a> and <a id="mail_b"></a>.</p>
         </div>
       </div>
       <div class="row mt-5">
