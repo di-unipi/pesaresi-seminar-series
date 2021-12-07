@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    title= "Pesaresi 2022"
+    title= "Pesaresi Seminars 2022"
     meta(charset="utf-8")
     meta(name="viewport",content="width=device-width,initial-scale=1")
 
@@ -15,9 +15,14 @@ html(lang="en")
         n.href = p;
         n.text = p.slice(p.indexOf(":")+1);
       }
+      function h(a,b,c) {
+        b = f(b);
+        c = f(c);
+        a.href = b + "," + c.slice(c.indexOf(":")+1);
+        console.log(a)
+      }
       document.addEventListener("DOMContentLoaded", function(){
-        g(document.getElementById('mail_a'), "fZbemh3\\abZkZ'in`eb^l^9ia]'ngbib'bm");
-        g(document.getElementById('mail_b'), "fZbemh3kb\\\\Zk]h'fZllb]]Z9ia]'ngbib'bm");
+        h(document.getElementById('mail_both'), "fZbemh3\\abZkZ'in`eb^l^9ia]'ngbib'bm", "fZbemh3kb\\\\Zk]h'fZllb]]Z9ia]'ngbib'bm")
       })
   body
     .container
