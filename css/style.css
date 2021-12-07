@@ -10,10 +10,13 @@ body {
   margin-bottom: 20px;
 }
 
-
 #profile {
   border-radius: 10%;
   width: 100%;
+}
+
+.next_title {
+  font-weight: bold;
 }
 
 .poster {
@@ -37,8 +40,20 @@ body {
   margin-right: 5px;
 }
 
+.next_title > a:nth-child(1) {
+  color: #FF6F00;
+}
+
+mark {
+  background-color: #FFE28C;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
 .abstract {
   color: #666666;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .next {
@@ -82,47 +97,45 @@ a, a:hover {
   color: #444444;
 }
 
-/* mark { */
-/*   color: black; */
-/*   background-color: #cdeedd; */
-/*   padding-top: 0px; */
-/*   padding-bottom: 0px; */
-/* } */
-
 .b {
   font-weight: bold;
 }
 
 /*
  * Dark mode
- * https://colorhunt.co/palette/136567
- * + #f7d6bf
+ * https://miro.medium.com/max/2160/1*uJ2ReGgXJhUi75mFCmUrZA.png
+ * from https://uxdesign.cc/dark-mode-ui-design-the-definitive-guide-part-1-color-53dcfaea5129
+ * as "Cool Grey"
  */
-/* @media (prefers-color-scheme: dark) { */
-/*   body { */
-/*     background-color: #222831; */
-/*     color: #eeeeee; */
-/*   } */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1F2933;
+    color: #E4E7EB;
+  }
 
-/*   a, a:hover { */
-/*     color: #cdeedd; */
-/*   } */
+  a, a:hover {
+    color: #CDEEDD;
+  }
 
-/*   /1* mark { *1/ */
-/*   /1*   background-color: #f7d6bf; *1/ */
-/*   /1*   color: #222831; *1/ */
-/*   /1* } *1/ */
+  mark {
+    background-color: #3E4C59;
+    color: #F5F7FA;
+  }
 
-/*   .ai, .fa, .fab, .fas { */
-/*     color: #eeeeee; */
-/*   } */
+  .ai, .fa, .fab, .fas {
+    color: #eeeeee;
+  }
 
-/*   .poster { */
-/*     background-color: #fafafa; */
-/*     padding: 20px; */
-/*   } */
+  .next_title > a:nth-child(1) {
+    color: #FF8F00;
+  }
 
-/*   .abstract { */
-/*     color: #bbbbbb; */
-/*   } */
-/* } */
+  .poster {
+    background-color: #fafafa;
+    padding: 20px;
+  }
+
+  .abstract {
+    color: #9AA5B1;
+  }
+}
