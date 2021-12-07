@@ -12,7 +12,6 @@ html(lang="en")
       f = a => a.replace(/./g, function (c){return String.fromCharCode(c.charCodeAt(0) + 7);})
       function g(n,m) {
         p = f(m);
-        console.log(p)
         n.href = p;
         n.text = p.slice(p.indexOf(":")+1);
       }
