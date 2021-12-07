@@ -19,6 +19,16 @@ body {
   font-weight: bold;
 }
 
+.date {
+  text-align: right;
+}
+
+.day {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+
 .poster {
   width: 100%;
   margin-top: 5px;
