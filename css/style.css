@@ -23,6 +23,10 @@ body {
   text-align: right;
 }
 
+h1 {
+  font-weight: bold;
+}
+
 .day {
   font-weight: bold;
   margin-bottom: 0px;
