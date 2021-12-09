@@ -19,7 +19,7 @@ body {
   font-weight: bold;
 }
 
-.date {
+.date, .address {
   text-align: right;
 }
 
@@ -84,6 +84,9 @@ ul {
     .container {
       margin-top: 20px;
     }
+}
+
+@media only screen and (max-width : 768px) {
     .date {
       text-align: left;
     }
