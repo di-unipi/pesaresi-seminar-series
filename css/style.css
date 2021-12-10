@@ -3,6 +3,7 @@ body {
 }
 
 .container {
+  max-width: 90%;
   margin-top: 100px;
 }
 
@@ -29,7 +30,7 @@ h1 {
 
 .day {
   font-weight: bold;
-  margin-bottom: 0px;
+  margin-bottom: -0.5rem !important;
 }
 
 
@@ -87,18 +88,6 @@ ul {
 @media only screen and (max-width : 576px) {
     .container {
       margin-top: 20px;
-    }
-}
-
-@media only screen and (max-width : 768px) {
-    .date {
-      text-align: left;
-    }
-}
-
-@media only screen and (min-width : 768px) {
-    .container {
-      max-width: 80%;
     }
 }
 
