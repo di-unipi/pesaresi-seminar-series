@@ -35,10 +35,8 @@ h1 {
 }
 
 .day {
-  font-weight: bold;
   margin-bottom: -0.5rem !important;
 }
-
 
 .poster {
   width: 100%;
@@ -46,11 +44,7 @@ h1 {
 }
 
 .project {
-  padding-bottom: 20px;
-}
-
-.location {
-  margin-bottom: 0;
+  padding-bottom: 40px;
 }
 
 .author {
@@ -73,12 +67,6 @@ mark {
 
 .abstract {
   color: #666666;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-.next {
-  margin-top: 10px;
 }
 
 ul {
