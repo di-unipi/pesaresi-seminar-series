@@ -91,11 +91,6 @@ ul {
     }
 }
 
-a, a:hover {
-  color: #24364e;
-  text-decoration: none;
-}
-
 .ai, .fa, .fab, .fas {
   color: #444444;
 }
@@ -117,12 +112,12 @@ a, a:hover {
   }
 
   a, a:hover {
-    color: #CDEEDD;
+    color: #9FFFCE;
   }
 
   mark {
-    background-color: #3E4C59;
-    color: #F5F7FA;
+    background-color: #A8D5BE;
+    color: #000000;
   }
 
   .ai, .fa, .fab, .fas {
