@@ -10,7 +10,7 @@ raw = """
     p 15:00-16:00
   .col-md-7.col-9
     p.author #[span.me %%%AUTHOR%%%]
-    h5.title.mb-1
+    h4.title.mb-1
       | %%%TITLE%%%
     .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
       a(href="%%%CALENDAR%%%",target="_blank").btn.btn-primary
@@ -25,7 +25,7 @@ raw_upcoming = """
 .row.next
   .col-md-7.col-8
     p.author #[span.me %%%AUTHOR%%%]
-    h4.title.mb-0.mt-1
+    h2.title.mb-0.mt-1
       | %%%TITLE%%%
   .col-md-2.col-4
     h1.day %%%DAY%%%
