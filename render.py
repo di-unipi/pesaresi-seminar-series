@@ -1,3 +1,4 @@
+from csv import DictReader
 from datetime import datetime as dt
 import hashlib
 import sys
@@ -15,7 +16,7 @@ raw = """
     .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
       a(href="%%%CALENDAR%%%",target="_blank").btn.btn-primary
         | #[i.bi.bi-calendar-event-fill] Add to Calendar
-      a(data-bs-toggle="collapse",href="#%%%TALK_ID%%%",role="button",aria-expanded="false",aria-controls="collapseExample").btn.btn-primary%%%DISABLED%%%
+      button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#%%%TALK_ID%%%",aria-expanded="false",aria-controls="%%%TALK_ID%%%"%%%DISABLED%%%)
         | #[i.bi.bi-file-earmark-text-fill] Abstract
   .col-md-7
     p.abstract#%%%TALK_ID%%%.collapse.mt-2
@@ -74,7 +75,7 @@ def render_talk(talk, upcoming=False):
         output = output.replace('%%%DISABLED%%%', '')
     else:
         output = output.replace('%%%ABSTRACT%%%', 'No abstract available')
-        output = output.replace('%%%DISABLED%%%', '.disabled')
+        output = output.replace('%%%DISABLED%%%', ',aria-disabled="true",disabled')
 
     # Eventually add calendar link
     if 'Calendar' in talk and talk['Calendar']:
@@ -90,6 +91,9 @@ def render_talk(talk, upcoming=False):
 
     # Generate talk ID from the author using md5
     talk_id = hashlib.md5(talk['Name'].encode('utf-8')).hexdigest()
+
+    # DOM Selectors can't start with a number
+    talk_id = 'talk-' + talk_id
 
     # Add talk ID to output
     output = output.replace('%%%TALK_ID%%%', talk_id)
@@ -119,13 +123,9 @@ if __name__ == '__main__':
 
 
     # Parse CSV file into a dictionary
-    with open(args.csv_filename, 'r') as f:
-        lines = f.readlines()
-        header = lines[0].strip().split(',')
-        talks = []
-        for line in lines[1:]:
-            row = line.strip().split(',')
-            talks.append(dict(zip(header, row)))
+    with open(args.csv_filename, 'r') as fp:
+        csv_reader = DictReader(fp)
+        talks = list(csv_reader)
 
     # Get current datetime
     if not args.date:
