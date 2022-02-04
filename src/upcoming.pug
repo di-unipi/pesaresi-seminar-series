@@ -3,18 +3,18 @@
 
 .row.next
   .col-md-7.col-8
-    p.author #[span.me Riccardo Massidda]
+    p.author #[span.me Arslan Siddique]
     h2.title.mb-0.mt-1
-      | Concept-Based Methods for Neural Network Interpretation
+      | Automatic key frame selection for video-based structure from motion pipelines
   .col-md-2.col-4
-    h1.day 4th
+    h1.day 11th
     h4.month.mb-0 February
     p 15:00-16:00
   .col-md-7.col-12.mt-sm-3.mt-lg-1
       p
-        | Concept-based methods attempt to interpret existing neural networks or to design inherently interpretable models by exploiting human-comprehensible concepts. In the current talk, I will present few significant examples of such methods, discussing their commonalities, their underlying assumptions, and their applications. More in detail, I will focus on the semantic alignment of neural directions and visual concepts in CNNs for computer vision. In this context, different existing approaches might be understood in terms of a unified general framework. Furthermore, I will show the impact of acknowledging semantic relations on such framework. Finally, the talk discusses the main issues affecting concept-based methods and hints to possible research strategies to tackle them.
+        | Structure from motion (SfM) is a photogrammetric imaging technique that refers to estimating 3D object models using a range of 2D images. 3D object models can be constructed from a 2D video sequence taken using a hand-held camera. However, processing all frames leads to a very high computational complexity and poor results. Automatic key frame selection significantly reduces computational time and improves the accuracy of Structure from Motion pipelines. In the first stage, features are extracted and tracked throughout the sequence. In a second stage stereo matching is used to obtain a detailed estimate of the geometry of the observed scene and compute frame-to-frame Homography and Fundamental matrices. Finally, a geometric robust information criterion (GRIC) is computed to decide the removal of this frame. The method has been tested on a test scenario containing some stationary scenes and experiments show that the proposed method is able to discard the frames corresponding to stationary scenes. 
   .col-md-4.d-grid.gap-2.d-md-block
-    a(href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NzEwcWF2NmRlZm8yMGwxN2l2cXA3Y3Q4M2ogY191MGNvOWZxb28xNTk3bWZydGFwdG1jMTlyMEBn&tmsrc=c_u0co9fqoo1597mfrtaptmc19r0%40group.calendar.google.com",target="_blank").btn.btn-primary.mb-md-3.w-100
+    a(href="https://calendar.google.com/event?action=TEMPLATE&tmeid=M3Q4MWF0ZjkzYjQyNW0yM3M5ZnE0MnRrN3IgY191MGNvOWZxb28xNTk3bWZydGFwdG1jMTlyMEBn&tmsrc=c_u0co9fqoo1597mfrtaptmc19r0%40group.calendar.google.com",target="_blank").btn.btn-primary.mb-md-3.w-100
       | #[i.bi.bi-calendar-event-fill] Add to Calendar
     a(href="https://meet.google.com/egw-bjya-aur").btn.btn-primary.mb-md-3.w-100
       | #[i.bi.bi-camera-reels-fill] Live Streaming
