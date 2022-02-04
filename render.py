@@ -1,7 +1,6 @@
 from csv import DictReader
 from datetime import datetime as dt
 import hashlib
-import sys
 
 raw = """
 .row.project
@@ -17,7 +16,7 @@ raw = """
       a(href="%%%CALENDAR%%%",target="_blank").btn.btn-primary
         | #[i.bi.bi-calendar-event-fill] Add to Calendar
       button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#%%%TALK_ID%%%",aria-expanded="false",aria-controls="%%%TALK_ID%%%"%%%DISABLED%%%)
-        | #[i.bi.bi-file-earmark-text-fill] Abstract
+        | #[i.bi.bi-file-earmark-text-fill] Abstract%%%SLIDES%%%
   .col-md-7
     p.abstract#%%%TALK_ID%%%.collapse.mt-2
         | %%%ABSTRACT%%%"""
@@ -41,12 +40,17 @@ raw_upcoming = """
     a(href="%%%MEET%%%").btn.btn-primary.mb-md-3.w-100
       | #[i.bi.bi-camera-reels-fill] Live Streaming
       """
+
+slides_raw = """
+      a(href="%%%SLIDES%%%",target="_blank").btn.btn-primary
+        | #[i.bi.bi-easel3-fill] Slides"""
+
 # Button for in presence location
 # a(href="https://goo.gl/maps/FL4qcbB3MnMXrYS28",target="_blank").btn.btn-primary.w-100
 #   | #[i.bi.bi-geo-alt-fill] Sala Seminari Est
 
 
-def render_talk(talk, upcoming=False):
+def render_talk(talk, upcoming=False, slides=False):
     if upcoming:
         template = raw_upcoming
     else:
@@ -76,7 +80,8 @@ def render_talk(talk, upcoming=False):
         output = output.replace('%%%DISABLED%%%', '')
     else:
         output = output.replace('%%%ABSTRACT%%%', 'No abstract available')
-        output = output.replace('%%%DISABLED%%%', ',aria-disabled="true",disabled')
+        output = output.replace('%%%DISABLED%%%',
+                                ',aria-disabled="true",disabled')
 
     # Eventually add calendar link
     if 'Calendar' in talk and talk['Calendar']:
@@ -89,6 +94,15 @@ def render_talk(talk, upcoming=False):
         output = output.replace('%%%MEET%%%', talk['Meet'])
     else:
         output = output.replace('%%%MEET%%%', '#')
+
+    # Eventually add slides link
+    if slides:
+        output = output.replace('%%%SLIDES%%%',
+                                slides_raw.replace('%%%SLIDES%%%',
+                                                   f'slides/{talk["Title"]}'
+                                                   '.pdf'))
+    else:
+        output = output.replace('%%%SLIDES%%%', '')
 
     # Generate talk ID from the author using md5
     talk_id = hashlib.md5(talk['Name'].encode('utf-8')).hexdigest()
@@ -114,14 +128,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Render talks')
     parser.add_argument('-u', '--upcoming', action='store_true',
                         help='Render upcoming talks')
-    parser.add_argument('-d','--date', type=str,
+    parser.add_argument('-d', '--date', type=str,
                         help='Render page for a specific date '
                              '(format: DD/MM/YYYY)')
     parser.add_argument('csv_filename', type=str,
                         help='CSV file containing talks')
     args = parser.parse_args()
-
-
 
     # Parse CSV file into a dictionary
     with open(args.csv_filename, 'r') as fp:
@@ -136,8 +148,10 @@ if __name__ == '__main__':
 
     # Filter talks
     talks = [talk for talk in talks if talk['Name']]
-    future = [talk for talk in talks if dt.strptime(talk['Date'], '%d/%m/%Y') > now]
-    past = [talk for talk in talks if dt.strptime(talk['Date'], '%d/%m/%Y') <= now]
+    future = [talk for talk in talks if dt.strptime(talk['Date'],
+                                                    '%d/%m/%Y') > now]
+    past = [talk for talk in talks if dt.strptime(talk['Date'],
+                                                  '%d/%m/%Y') <= now]
 
     # Assign upcoming
     if future and args.upcoming:
@@ -161,7 +175,7 @@ if __name__ == '__main__':
             f.write('.row.mt-4.mb-4\n')
             f.write('  h2 #[span.emoji ⌛️] Past Talks\n')
             for talk in past:
-                f.write(render_talk(talk))
+                f.write(render_talk(talk, slides=True))
         else:
             f.write('')
 
