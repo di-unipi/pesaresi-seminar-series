@@ -1,6 +1,7 @@
 from csv import DictReader
 from datetime import datetime as dt
 import hashlib
+import os
 
 raw = """
 .row.project
@@ -38,19 +39,23 @@ raw_upcoming = """
     a(href="%%%CALENDAR%%%",target="_blank").btn.btn-primary.mb-md-3.w-100
       | #[i.bi.bi-calendar-event-fill] Add to Calendar
     a(href="%%%MEET%%%").btn.btn-primary.mb-md-3.w-100
-      | #[i.bi.bi-camera-reels-fill] Live Streaming
+      | #[i.bi.bi-camera-reels-fill] Live Streaming%%%SLIDES%%%
       """
 
 slides_raw = """
       a(href="%%%SLIDES%%%",target="_blank").btn.btn-primary
         | #[i.bi.bi-easel3-fill] Slides"""
 
+slides_raw_upcoming = """
+    a(href="%%%SLIDES%%%",target="_blank").btn.btn-primary.mb-md-3.w-100
+      | #[i.bi.bi-easel3-fill] Slides"""
+
 # Button for in presence location
 # a(href="https://goo.gl/maps/FL4qcbB3MnMXrYS28",target="_blank").btn.btn-primary.w-100
 #   | #[i.bi.bi-geo-alt-fill] Sala Seminari Est
 
 
-def render_talk(talk, upcoming=False, slides=False):
+def render_talk(talk, upcoming=False):
     if upcoming:
         template = raw_upcoming
     else:
@@ -95,12 +100,20 @@ def render_talk(talk, upcoming=False, slides=False):
     else:
         output = output.replace('%%%MEET%%%', '#')
 
+    # Check if the slides are available
+    slides_fname = f'slides/{talk["Title"]}.pdf'
+    slides = os.path.isfile(slides_fname)
+
     # Eventually add slides link
-    if slides:
+    if slides and not upcoming:
         output = output.replace('%%%SLIDES%%%',
                                 slides_raw.replace('%%%SLIDES%%%',
-                                                   f'slides/{talk["Title"]}'
-                                                   '.pdf'))
+                                                   slides_fname))
+    elif slides and upcoming:
+        output = output.replace('%%%SLIDES%%%',
+                                slides_raw_upcoming.replace('%%%SLIDES%%%',
+                                                            slides_fname))
+        print('Slides found for talk', talk['Title'])
     else:
         output = output.replace('%%%SLIDES%%%', '')
 
@@ -175,7 +188,7 @@ if __name__ == '__main__':
             f.write('.row.mt-4.mb-4\n')
             f.write('  h2 #[span.emoji ⌛️] Past Talks\n')
             for talk in past:
-                f.write(render_talk(talk, slides=True))
+                f.write(render_talk(talk))
         else:
             f.write('')
 
