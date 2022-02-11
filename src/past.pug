@@ -58,3 +58,22 @@
   .col-md-7
     p.abstract#talk-89ee1ad65c602ab48f5110f2fe9e267e.collapse.mt-2
         | Concept-based methods attempt to interpret existing neural networks or to design inherently interpretable models by exploiting human-comprehensible concepts. In the current talk, I will present few significant examples of such methods, discussing their commonalities, their underlying assumptions, and their applications. More in detail, I will focus on the semantic alignment of neural directions and visual concepts in CNNs for computer vision. In this context, different existing approaches might be understood in terms of a unified general framework. Furthermore, I will show the impact of acknowledging semantic relations on such framework. Finally, the talk discusses the main issues affecting concept-based methods and hints to possible research strategies to tackle them.
+.row.project
+  .col-md-2.col-3
+    h3.mb-0 11th
+    h5.month.mb-0 February
+    p 15:00-16:00
+  .col-md-7.col-9
+    p.author #[span.me Arslan Siddique]
+    h4.title.mb-1
+      | Automatic key frame selection for video-based structure from motion pipelines
+    .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
+      a(href="https://calendar.google.com/event?action=TEMPLATE&tmeid=M3Q4MWF0ZjkzYjQyNW0yM3M5ZnE0MnRrN3IgY191MGNvOWZxb28xNTk3bWZydGFwdG1jMTlyMEBn&tmsrc=c_u0co9fqoo1597mfrtaptmc19r0%40group.calendar.google.com",target="_blank").btn.btn-primary
+        | #[i.bi.bi-calendar-event-fill] Add to Calendar
+      button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#talk-7f3f92dc59f649364f5526815075bd1b",aria-expanded="false",aria-controls="talk-7f3f92dc59f649364f5526815075bd1b")
+        | #[i.bi.bi-file-earmark-text-fill] Abstract
+      a(href="slides/Automatic key frame selection for video-based structure from motion pipelines.pdf",target="_blank").btn.btn-primary
+        | #[i.bi.bi-easel3-fill] Slides
+  .col-md-7
+    p.abstract#talk-7f3f92dc59f649364f5526815075bd1b.collapse.mt-2
+        | Structure from motion (SfM) is a photogrammetric imaging technique that refers to estimating 3D object models using a range of 2D images. 3D object models can be constructed from a 2D video sequence taken using a hand-held camera. However, processing all frames leads to a very high computational complexity and poor results. Automatic key frame selection significantly reduces computational time and improves the accuracy of Structure from Motion pipelines. In the first stage, features are extracted and tracked throughout the sequence. In a second stage stereo matching is used to obtain a detailed estimate of the geometry of the observed scene and compute frame-to-frame Homography and Fundamental matrices. Finally, a geometric robust information criterion (GRIC) is computed to decide the removal of this frame. The method has been tested on a test scenario containing some stationary scenes and experiments show that the proposed method is able to discard the frames corresponding to stationary scenes. 
