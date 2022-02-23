@@ -40,6 +40,8 @@ raw_upcoming = """
       | #[i.bi.bi-calendar-event-fill] Add to Calendar
     a(href="%%%MEET%%%").btn.btn-primary.mb-md-3.w-100
       | #[i.bi.bi-camera-reels-fill] Live Streaming%%%SLIDES%%%
+    a(href="https://goo.gl/maps/FL4qcbB3MnMXrYS28",target="_blank").btn.btn-primary.w-100
+      | #[i.bi.bi-geo-alt-fill] Sala Seminari Est
       """
 
 slides_raw = """
@@ -49,10 +51,6 @@ slides_raw = """
 slides_raw_upcoming = """
     a(href="%%%SLIDES%%%",target="_blank").btn.btn-primary.mb-md-3.w-100
       | #[i.bi.bi-easel3-fill] Slides"""
-
-# Button for in presence location
-# a(href="https://goo.gl/maps/FL4qcbB3MnMXrYS28",target="_blank").btn.btn-primary.w-100
-#   | #[i.bi.bi-geo-alt-fill] Sala Seminari Est
 
 
 def render_talk(talk, upcoming=False):
