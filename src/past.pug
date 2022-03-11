@@ -123,12 +123,31 @@
   .col-md-7.col-9
     p.author #[span.me Cosimo Rulli]
     h4.title.mb-1
-      | Deep Neural Network Compression 
+      | Deep Neural Network Compression
     .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
       a(href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NGcxZGMxODNjbDdqaWY0djM3OTZzcmg1ZmUgY191MGNvOWZxb28xNTk3bWZydGFwdG1jMTlyMEBn&tmsrc=c_u0co9fqoo1597mfrtaptmc19r0%40group.calendar.google.com",target="_blank").btn.btn-primary
         | #[i.bi.bi-calendar-event-fill] Add to Calendar
       button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#talk-ef5b2cf28c5ecbca43955a309f99ee8a",aria-expanded="false",aria-controls="talk-ef5b2cf28c5ecbca43955a309f99ee8a")
         | #[i.bi.bi-file-earmark-text-fill] Abstract
+      a(href="slides/Deep Neural Network Compression.pdf",target="_blank").btn.btn-primary
+        | #[i.bi.bi-easel3-fill] Slides
   .col-md-7
     p.abstract#talk-ef5b2cf28c5ecbca43955a309f99ee8a.collapse.mt-2
         | Deep Neural Networks (DNNs) deliver state-of-the-art performance in a plethora of different tasks, such Computer Vision, Natural Language Processing and Speech Recognition. Their effectiveness comes at the price of an elevated computational burden, in terms of memory occupancy, inference time, and energy consumption, which hinders their usage in resource-constrained devices. Model Compression techniques tackle this problem by leveraging the largely proved over-parametrization of modern DNNs and aim at the reducing the computational requirements of DNNs without affecting their accuracy. In this seminar, we illustrate the taxonomy of DNNs compression methods, particularly focusing on quantization, pruning and knowledge distillation. We introduce their technical aspects, and discuss the different trade-offs between computational burden and accuracy that each technique allows to achieve.
+.row.project
+  .col-md-2.col-3
+    h3.mb-0 11th
+    h5.month.mb-0 March
+    p 15:00-16:00
+  .col-md-7.col-9
+    p.author #[span.me Martina Cinquini]
+    h4.title.mb-1
+      | CALIME: Causality-Aware Local Interpretable Model-agnostic Explanations
+    .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
+      a(href="https://calendar.google.com/event?action=TEMPLATE&tmeid=N3BqdThncWpvNWRtcDJ1aWswZTQ2aWdzM2MgY191MGNvOWZxb28xNTk3bWZydGFwdG1jMTlyMEBn&tmsrc=c_u0co9fqoo1597mfrtaptmc19r0%40group.calendar.google.com",target="_blank").btn.btn-primary
+        | #[i.bi.bi-calendar-event-fill] Add to Calendar
+      button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#talk-f25df3728ef8e03c4ea746ad3be8a3a0",aria-expanded="false",aria-controls="talk-f25df3728ef8e03c4ea746ad3be8a3a0")
+        | #[i.bi.bi-file-earmark-text-fill] Abstract
+  .col-md-7
+    p.abstract#talk-f25df3728ef8e03c4ea746ad3be8a3a0.collapse.mt-2
+        | Over the last few years, eXplainable Artificial Intelligence (XAI) methods have been experiencing a wave of popularity due to their ability to provide human-understandable explanations that express the rationale of black-box models used by decision-making systems. Despite the widespread adoption of these procedures, a significant drawback of XAI methods is the assumption of features independence that implies the inability to rely on direct knowledge about potential dependencies among variables. Indeed, black-box behaviors are typically approximated by studying the effects on randomly generated feature values that might rarely appear in original samples. As a consequence, post-hoc explanation methods can capture associations in the data between input features and target class without guaranteeing the presence of any causal relationships among input features. We introduce an extended version of a widely used local and model-agnostic explainer that explicitly encodes causal relationships in the data generated around the input instance for which the explanation is required.

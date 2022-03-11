@@ -101,6 +101,8 @@ def render_talk(talk, upcoming=False):
     # Check if the slides are available
     slides_fname = f'slides/{talk["Title"]}.pdf'
     slides = os.path.isfile(slides_fname)
+    if not slides:
+        print(f'No slides for "{talk["Title"]}"')
 
     # Eventually add slides link
     if slides and not upcoming:
