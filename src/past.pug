@@ -148,6 +148,8 @@
         | #[i.bi.bi-calendar-event-fill] Add to Calendar
       button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#talk-f25df3728ef8e03c4ea746ad3be8a3a0",aria-expanded="false",aria-controls="talk-f25df3728ef8e03c4ea746ad3be8a3a0")
         | #[i.bi.bi-file-earmark-text-fill] Abstract
+      a(href="slides/CALIME: Causality-Aware Local Interpretable Model-agnostic Explanations.pdf",target="_blank").btn.btn-primary
+        | #[i.bi.bi-easel3-fill] Slides
   .col-md-7
     p.abstract#talk-f25df3728ef8e03c4ea746ad3be8a3a0.collapse.mt-2
         | Over the last few years, eXplainable Artificial Intelligence (XAI) methods have been experiencing a wave of popularity due to their ability to provide human-understandable explanations that express the rationale of black-box models used by decision-making systems. Despite the widespread adoption of these procedures, a significant drawback of XAI methods is the assumption of features independence that implies the inability to rely on direct knowledge about potential dependencies among variables. Indeed, black-box behaviors are typically approximated by studying the effects on randomly generated feature values that might rarely appear in original samples. As a consequence, post-hoc explanation methods can capture associations in the data between input features and target class without guaranteeing the presence of any causal relationships among input features. We introduce an extended version of a widely used local and model-agnostic explainer that explicitly encodes causal relationships in the data generated around the input instance for which the explanation is required.
