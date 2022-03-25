@@ -172,3 +172,22 @@
   .col-md-7
     p.abstract#talk-0326aae7b72de998d20a9a29dd7f6753.collapse.mt-2
         | Abstract interpretation is a framework to design sound static analyses which over-approximate the set of program behaviours. While this can prove correctness, it can't show incorrectness because false alarms may arise from the over-approximation. These may undermine the credibility of a static analysis tool, making it less effective in practice. For abstract interpretation, an ideal but very uncommon situation is completeness, in which the abstract interpreter doesn't introduce false alarms, hence coming out more reliable. However, to our knowledge methods to show completeness-like properties deal with intensional (ie. dependant on syntax) abstractions of a program, while completeness itself is an extensional property of the program semantics only. In the talk, we propose an extension of Local Completeness Logic, an Hoare-style logic to prove completeness of the abstraction of a program c on an input P. Our main contribution is the addition of a new rule we call (refine-ext). This rule allows to perform part of the analysis in a finer abstract domain, then to move the result to the coarser one without any precision loss. With this addition, the logic is able to prove all triples where the extensional best correct approximation of the program semantics is locally complete, thus untying the set of provable properties from the way the program is written.
+.row.project
+  .col-md-2.col-3
+    h3.mb-0 25th
+    h5.month.mb-0 March
+    p 15:00-16:00
+  .col-md-7.col-9
+    p.author #[span.me Federica Di Pasquale]
+    h4.title.mb-1
+      | Mixed Integer Programming Solvers
+    .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
+      a(href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MDVxM2RmamY2dDIyODJrNHQ2NXJtdjE1NGYgY191MGNvOWZxb28xNTk3bWZydGFwdG1jMTlyMEBn&tmsrc=c_u0co9fqoo1597mfrtaptmc19r0%40group.calendar.google.com",target="_blank").btn.btn-primary
+        | #[i.bi.bi-calendar-event-fill] Add to Calendar
+      button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#talk-a7ff5d571b7acbc02556fc7b7a155162",aria-expanded="false",aria-controls="talk-a7ff5d571b7acbc02556fc7b7a155162")
+        | #[i.bi.bi-file-earmark-text-fill] Abstract
+      a(href="slides/Mixed Integer Programming Solvers.pdf",target="_blank").btn.btn-primary
+        | #[i.bi.bi-easel3-fill] Slides
+  .col-md-7
+    p.abstract#talk-a7ff5d571b7acbc02556fc7b7a155162.collapse.mt-2
+        | Mixed Integer Programming (MIP) Solvers are powerful tools for solving hard optimization problems. Over the past 60 years, both commercial and open-source MIP solvers have made tremendous progress thanks to the increasingly sophisticated techniques that have been developed. The core solution algorithm is common to most of the current state-of-the-art MIP solvers and it is called Branch and Cut, as it is an intermediate approach in between the generic Branch and Bound scheme and the Cutting Plane algorithm. However, the implementation details usually have a huge impact on the overall performances of a MIP solver. In this presentation, we will see the basic ideas of a Branch and Cut algorithm and a description of the main components of a MIP solver. Finally, we will discuss some possible research directions in order to achieve further improvements. 
