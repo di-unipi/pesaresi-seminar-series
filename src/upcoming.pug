@@ -3,18 +3,18 @@
 
 .row.next
   .col-md-7.col-8
-    p.author #[span.me Nicolò Tonci]
+    p.author #[span.me Alberto Ottimo]
     h2.title.mb-0.mt-1
-      | Targeting scale-out and scale-up platforms with a unified parallel programming model
+      | Data Stream Processing on FPGAs
   .col-md-2.col-4
-    h1.day 22nd
+    h1.day 29th
     h4.month.mb-0 April
     p 15:00-16:00
   .col-md-7.col-12.mt-sm-3.mt-lg-1
       p
-        | The proliferation of interconnected devices, capable of generating huge amounts of data, requires highly performing applications to extract insights. These needs amplify the demand of new scalable algorithms and programming interfaces, both for shared-memory and distributed-memory architectures. Currently, the standard tools to approach this challenge are either too complex or unflexible for programmers. This research aimed to propose a new distributed-memory run-time system for FastFlow’s building-blocks. FastFlow is a C++ structured parallel programming library, originally targeting shared-memory platforms. This new support allowed the exploitation of the parallel resources of multiple interconnected machines. The main target of the proposed run-time system was to enable an easy and smooth transition between shared-memory FastFlow applications to equivalent distributed-memory ones. A preliminary analysis of the new run-time system reported considerable benefits from the programmability and flexibility points of view. Additionally, a set of experiments, based both on real and artificial programs, validated the presented solution, demonstrating a significant performance gain and ability to fully exploit the resources of a cluster of machines.
+        | State-of-art Data Stream Processing (DSP) systems provide high-level programming abstractions that hide the complexity of managing and deploying streaming applications on scale-out architectures. Unfortunately, integrating accelerators like FPGAs on those systems is not primitively considered. The application developer is obliged to manually intermix low-level primitives with the business logic code of the application. To overcome such a limitation, we propose a code generation approach that can produce efficient code starting from a suitable high-level representation of a DSP application, generating optimized code tailored for architectures equipped with FPGAs. We discuss several challenges a developer faces in designing and integrating FPGA accelerators in their applications. Then, we propose a run-time system and a set of base operators targeting Intel FPGAs and using the OpenCL standard to address these challenges. We evaluate our work using different representative data stream applications. Our experiments show that our work delivers competitive performance compared to existing DSP systems. We expect this work will accelerate progress in this domain.
   .col-md-4.d-grid.gap-2.d-md-block
-    a(href="https://calendar.google.com/event?action=TEMPLATE&tmeid=M2ZibWpnNGY1MjFyM24zbWNsc25lMzByMDAgY191MGNvOWZxb28xNTk3bWZydGFwdG1jMTlyMEBn&tmsrc=c_u0co9fqoo1597mfrtaptmc19r0%40group.calendar.google.com",target="_blank").btn.btn-primary.mb-md-3.w-100
+    a(href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NmQzcGtobTRtYjhtbXRpcXFmbXU0ZmpsdXEgY191MGNvOWZxb28xNTk3bWZydGFwdG1jMTlyMEBn&tmsrc=c_u0co9fqoo1597mfrtaptmc19r0%40group.calendar.google.com",target="_blank").btn.btn-primary.mb-md-3.w-100
       | #[i.bi.bi-calendar-event-fill] Add to Calendar
     a(href="https://meet.google.com/egw-bjya-aur").btn.btn-primary.mb-md-3.w-100
       | #[i.bi.bi-camera-reels-fill] Live Streaming
