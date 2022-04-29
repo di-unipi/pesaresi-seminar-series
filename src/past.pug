@@ -262,6 +262,8 @@
         | #[i.bi.bi-calendar-event-fill] Add to Calendar
       button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#talk-3f351ec14ef7a076a139d2d22384935b",aria-expanded="false",aria-controls="talk-3f351ec14ef7a076a139d2d22384935b")
         | #[i.bi.bi-file-earmark-text-fill] Abstract
+      a(href="slides/Data Stream Processing on FPGAs.pdf",target="_blank").btn.btn-primary
+        | #[i.bi.bi-easel3-fill] Slides
   .col-md-7
     p.abstract#talk-3f351ec14ef7a076a139d2d22384935b.collapse.mt-2
         | State-of-art Data Stream Processing (DSP) systems provide high-level programming abstractions that hide the complexity of managing and deploying streaming applications on scale-out architectures. Unfortunately, integrating accelerators like FPGAs on those systems is not primitively considered. The application developer is obliged to manually intermix low-level primitives with the business logic code of the application. To overcome such a limitation, we propose a code generation approach that can produce efficient code starting from a suitable high-level representation of a DSP application, generating optimized code tailored for architectures equipped with FPGAs. We discuss several challenges a developer faces in designing and integrating FPGA accelerators in their applications. Then, we propose a run-time system and a set of base operators targeting Intel FPGAs and using the OpenCL standard to address these challenges. We evaluate our work using different representative data stream applications. Our experiments show that our work delivers competitive performance compared to existing DSP systems. We expect this work will accelerate progress in this domain.
