@@ -224,6 +224,8 @@
         | #[i.bi.bi-calendar-event-fill] Add to Calendar
       button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#talk-220607c258f7d75f8df74e7882bf5900",aria-expanded="false",aria-controls="talk-220607c258f7d75f8df74e7882bf5900")
         | #[i.bi.bi-file-earmark-text-fill] Abstract
+      a(href="slides/Inferring Viral Transmission Using Closely Related Viral Genomes.pdf",target="_blank").btn.btn-primary
+        | #[i.bi.bi-easel3-fill] Slides
   .col-md-7
     p.abstract#talk-220607c258f7d75f8df74e7882bf5900.collapse.mt-2
         | The genome of each individual in a species is different from that of every other individual within the same species. Further, the genome of each species is different from every other species. Despite this, most modern tools and methods for genome analysis treat the genome of a species as if it were linear, updating at regular intervals, and homogenous between individuals. Such a genome is known as a linear reference and is prone to the reference bias problem: a tendency of the reference genome to over-report sequences present in it and under-report those that are not. Genome graphs combat this bias by representing variation as alternative nodes and edges.I demonstrate the plausibility of differentiating related consensus genomes by comparing how they compare to a genome graph, then using this comparison to construct a phylogeny and further infer transmission.
@@ -246,3 +248,20 @@
   .col-md-7
     p.abstract#talk-0fc6ae091715c1e4b706d8d21f6a4d02.collapse.mt-2
         | The proliferation of interconnected devices, capable of generating huge amounts of data, requires highly performing applications to extract insights. These needs amplify the demand of new scalable algorithms and programming interfaces, both for shared-memory and distributed-memory architectures. Currently, the standard tools to approach this challenge are either too complex or unflexible for programmers. This research aimed to propose a new distributed-memory run-time system for FastFlow’s building-blocks. FastFlow is a C++ structured parallel programming library, originally targeting shared-memory platforms. This new support allowed the exploitation of the parallel resources of multiple interconnected machines. The main target of the proposed run-time system was to enable an easy and smooth transition between shared-memory FastFlow applications to equivalent distributed-memory ones. A preliminary analysis of the new run-time system reported considerable benefits from the programmability and flexibility points of view. Additionally, a set of experiments, based both on real and artificial programs, validated the presented solution, demonstrating a significant performance gain and ability to fully exploit the resources of a cluster of machines.
+.row.project
+  .col-md-2.col-3
+    h3.mb-0 29th
+    h5.month.mb-0 April
+    p 15:00-16:00
+  .col-md-7.col-9
+    p.author #[span.me Alberto Ottimo]
+    h4.title.mb-1
+      | Data Stream Processing on FPGAs
+    .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
+      a(href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NmQzcGtobTRtYjhtbXRpcXFmbXU0ZmpsdXEgY191MGNvOWZxb28xNTk3bWZydGFwdG1jMTlyMEBn&tmsrc=c_u0co9fqoo1597mfrtaptmc19r0%40group.calendar.google.com",target="_blank").btn.btn-primary
+        | #[i.bi.bi-calendar-event-fill] Add to Calendar
+      button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#talk-3f351ec14ef7a076a139d2d22384935b",aria-expanded="false",aria-controls="talk-3f351ec14ef7a076a139d2d22384935b")
+        | #[i.bi.bi-file-earmark-text-fill] Abstract
+  .col-md-7
+    p.abstract#talk-3f351ec14ef7a076a139d2d22384935b.collapse.mt-2
+        | State-of-art Data Stream Processing (DSP) systems provide high-level programming abstractions that hide the complexity of managing and deploying streaming applications on scale-out architectures. Unfortunately, integrating accelerators like FPGAs on those systems is not primitively considered. The application developer is obliged to manually intermix low-level primitives with the business logic code of the application. To overcome such a limitation, we propose a code generation approach that can produce efficient code starting from a suitable high-level representation of a DSP application, generating optimized code tailored for architectures equipped with FPGAs. We discuss several challenges a developer faces in designing and integrating FPGA accelerators in their applications. Then, we propose a run-time system and a set of base operators targeting Intel FPGAs and using the OpenCL standard to address these challenges. We evaluate our work using different representative data stream applications. Our experiments show that our work delivers competitive performance compared to existing DSP systems. We expect this work will accelerate progress in this domain.
