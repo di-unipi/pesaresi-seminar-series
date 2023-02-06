@@ -8,14 +8,13 @@ raw = """
   .col-md-2.col-3
     h3.mb-0 %%%DAY%%%
     h5.month.mb-0 %%%MONTH%%%
-    p 15:00-16:00
+    p %%%HOURS%%%
   .col-md-7.col-9
     p.author #[span.me %%%AUTHOR%%%]
     h4.title.mb-1
       | %%%TITLE%%%
     .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
-      a(href="%%%CALENDAR%%%",target="_blank").btn.btn-primary
-        | #[i.bi.bi-calendar-event-fill] Add to Calendar
+      %%%CALENDAR%%%
       button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#%%%TALK_ID%%%",aria-expanded="false",aria-controls="%%%TALK_ID%%%"%%%DISABLED%%%)
         | #[i.bi.bi-file-earmark-text-fill] Abstract%%%SLIDES%%%
   .col-md-7
@@ -31,29 +30,35 @@ raw_upcoming = """
   .col-md-2.col-4
     h1.day %%%DAY%%%
     h4.month.mb-0 %%%MONTH%%%
-    p 15:00-16:00
+    p %%%HOURS%%%
   .col-md-7.col-12.mt-sm-3.mt-lg-1
       p
         | %%%ABSTRACT%%%
   .col-md-4.d-grid.gap-2.d-md-block
-    a(href="%%%CALENDAR%%%",target="_blank").btn.btn-primary.mb-md-3.w-100
-      | #[i.bi.bi-calendar-event-fill] Add to Calendar
+    %%%CALENDAR%%%
     a(href="%%%MEET%%%").btn.btn-primary.mb-md-3.w-100
       | #[i.bi.bi-camera-reels-fill] Live Streaming%%%SLIDES%%%
     a(href="https://goo.gl/maps/FL4qcbB3MnMXrYS28",target="_blank").btn.btn-primary.w-100
-      | #[i.bi.bi-geo-alt-fill] Sala Seminari Est
+      | #[i.bi.bi-geo-alt-fill] %%%ROOM%%%
       """
+calendar_raw = """
+      a(href="%%%CALENDAR%%%",target="_blank").btn.btn-primary
+        | #[i.bi.bi-calendar-event-fill] Add to Calendar"""
 
 slides_raw = """
       a(href="%%%SLIDES%%%",target="_blank").btn.btn-primary
         | #[i.bi.bi-easel3-fill] Slides"""
+
+calendar_raw_upcoming = """
+    a(href="%%%CALENDAR%%%",target="_blank").btn.btn-primary.mb-md-3.w-100
+      | #[i.bi.bi-calendar-event-fill] Add to Calendar"""
 
 slides_raw_upcoming = """
     a(href="%%%SLIDES%%%",target="_blank").btn.btn-primary.mb-md-3.w-100
       | #[i.bi.bi-easel3-fill] Slides"""
 
 
-def render_talk(talk, upcoming=False):
+def render_talk(talk, upcoming=False, past=False):
     if upcoming:
         template = raw_upcoming
     else:
@@ -75,7 +80,23 @@ def render_talk(talk, upcoming=False):
     output = template.replace('%%%DAY%%%', day)
     output = output.replace('%%%MONTH%%%', month)
     output = output.replace('%%%AUTHOR%%%', talk['Name'])
-    output = output.replace('%%%TITLE%%%', talk['Title'])
+
+    if talk['Title']:
+        output = output.replace('%%%TITLE%%%', talk['Title'])
+    else:
+        output = output.replace('%%%TITLE%%%', 'TBA')
+
+    # Eventually add room
+    if 'Room' in talk and talk['Room']:
+        output = output.replace("%%%ROOM%%%", talk['Room'])
+    else:
+        output = output.replace("%%%ROOM%%%", 'TBA')
+
+    # Eventually add hours
+    if 'Hours' in talk and talk['Hours']:
+        output = output.replace('%%%HOURS%%%', talk['Hours'])
+    else:
+        output = output.replace('%%%HOURS%%%', 'Hours TBA')
 
     # Eventually add abstract
     if talk['Abstract']:
@@ -87,10 +108,16 @@ def render_talk(talk, upcoming=False):
                                 ',aria-disabled="true",disabled')
 
     # Eventually add calendar link
-    if 'Calendar' in talk and talk['Calendar']:
-        output = output.replace('%%%CALENDAR%%%', talk['Calendar'])
+    if not past and not upcoming and 'Calendar' in talk and talk['Calendar']:
+        output = output.replace('%%%CALENDAR%%%',
+                                calendar_raw.replace('%%%CALENDAR%%%',
+                                                   talk['Calendar']))
+    elif not past and upcoming and 'Calendar' in talk and talk['Calendar']:
+        output = output.replace('%%%CALENDAR%%%',
+                                calendar_raw_upcoming.replace('%%%CALENDAR%%%',
+                                                   talk['Calendar']))
     else:
-        output = output.replace('%%%CALENDAR%%%', '#')
+        output = output.replace('%%%CALENDAR%%%', '')
 
     # Eventually add meet link
     if 'Meet' in talk and talk['Meet']:
@@ -187,8 +214,8 @@ if __name__ == '__main__':
         if past:
             f.write('.row.mt-4.mb-4\n')
             f.write('  h2 #[span.emoji ⌛️] Past Talks\n')
-            for talk in past:
-                f.write(render_talk(talk))
+            for talk in reversed(past):
+                f.write(render_talk(talk, past=True))
         else:
             f.write('')
 
