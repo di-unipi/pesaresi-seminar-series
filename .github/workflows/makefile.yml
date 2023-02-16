@@ -23,7 +23,7 @@ jobs:
       run: npm install pug
       
     - name: Install Pug
-      run: install pug-cli -g
+      run: install pug-cli
 
     - name: Remove old version
       run: make clean
