@@ -13,6 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Setup Node Version
+      uses: actions/setup-node@v3
+      with:
+        node-version: 12.x
+        
+    - name: Install Pug
+      run: npm install pug
+      
+    - name: Install Pug
+      run: install pug-cli -g
 
     - name: Remove old version
       run: make clean
