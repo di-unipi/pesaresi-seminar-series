@@ -1,5 +1,6 @@
 from csv import DictReader
 from datetime import datetime as dt
+from datetime import timedelta
 import hashlib
 import os
 
@@ -186,12 +187,13 @@ if __name__ == '__main__':
     else:
         now = dt.strptime(args.date, '%d/%m/%Y')
 
-    # Filter talks
+    # Filter talks 
+    #timedelta so if rendered the same day of a talk the talk is still upcoming
     talks = [talk for talk in talks if talk['Name']]
     future = [talk for talk in talks if dt.strptime(talk['Date'],
-                                                    '%d/%m/%Y') > now]
+                                                    '%d/%m/%Y') > now-timedelta(days=1)]
     past = [talk for talk in talks if dt.strptime(talk['Date'],
-                                                  '%d/%m/%Y') <= now]
+                                                  '%d/%m/%Y') <= now- timedelta(days=1)]
 
     # Assign upcoming
     if future and args.upcoming:
@@ -214,7 +216,7 @@ if __name__ == '__main__':
         if past:
             f.write('.row.mt-4.mb-4\n')
             f.write('  h2 #[span.emoji ⌛️] Past Talks\n')
-            for talk in reversed(past):
+            for talk in past:
                 f.write(render_talk(talk, past=True))
         else:
             f.write('')
