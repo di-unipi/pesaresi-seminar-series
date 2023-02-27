@@ -127,7 +127,7 @@ def render_talk(talk, upcoming=False, past=False):
         output = output.replace('%%%MEET%%%', '#')
 
     # Check if the slides are available
-    slides_fname = f'slides/{talk["Title"]}.pdf'
+    slides_fname = f'slides/{talk["Title"].replace(":","_")}.pdf'
     slides = os.path.isfile(slides_fname)
     if not slides:
         print(f'No slides for "{talk["Title"]}"')
