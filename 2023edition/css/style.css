@@ -1,0 +1,139 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+
+i {
+  padding-right: 10px;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.container {
+  max-width: 90%;
+  margin-top: 100px;
+}
+
+#header {
+  margin-bottom: 20px;
+}
+
+#profile {
+  border-radius: 10%;
+  width: 100%;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.date, .address {
+  text-align: right;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.day {
+  margin-bottom: -0.5rem !important;
+}
+
+.poster {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.project {
+  padding-bottom: 40px;
+}
+
+.author {
+  margin-bottom: 0;
+}
+
+.emoji {
+  margin-right: 5px;
+}
+
+.title {
+  color: #FF6F00;
+}
+
+mark {
+  background-color: #FFE28C;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.abstract {
+  color: #666666;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.me {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width : 576px) {
+    .container {
+      margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width : 1350px) {
+    .container {
+      max-width: 1080px;
+    }
+}
+
+.ai, .fa, .fab, .fas {
+  color: #444444;
+}
+
+.b {
+  font-weight: bold;
+}
+
+/*
+ * Dark mode
+ * https://miro.medium.com/max/2160/1*uJ2ReGgXJhUi75mFCmUrZA.png
+ * from https://uxdesign.cc/dark-mode-ui-design-the-definitive-guide-part-1-color-53dcfaea5129
+ * as "Cool Grey"
+ */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1F2933;
+    color: #E4E7EB;
+  }
+
+  a, a:hover {
+    color: #9FFFCE;
+  }
+
+  mark {
+    background-color: #A8D5BE;
+    color: #000000;
+  }
+
+  .ai, .fa, .fab, .fas {
+    color: #eeeeee;
+  }
+
+  .title {
+    color: #FFAD44;
+  }
+
+  .poster {
+    background-color: #fafafa;
+    padding: 20px;
+  }
+
+  .abstract {
+    color: #9AA5B1;
+  }
+}
