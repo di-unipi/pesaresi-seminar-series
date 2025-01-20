@@ -1,0 +1,21 @@
+.row.mt-4.mb-4
+  h2 #[span.emoji 🔮] Next Talks
+
+.row.project
+  .col-md-2.col-3
+    h3.mb-0 5th
+    h5.month.mb-0 April
+    p 15:00-16:00
+  .col-md-7.col-9
+    p.author #[span.me José Luis Conradi Hoffmann]
+    h4.title.mb-1
+      | Timed Data
+    .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
+      
+      button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#talk-375070463292dd2baf19b0d4a4ee0a03",aria-expanded="false",aria-controls="talk-375070463292dd2baf19b0d4a4ee0a03")
+        | #[i.bi.bi-file-earmark-text-fill] Abstract
+      a(href="slides/Timed Data.pdf",target="_blank").btn.btn-primary
+        | #[i.bi.bi-easel3-fill] Slides
+  .col-md-7
+    p.abstract#talk-375070463292dd2baf19b0d4a4ee0a03.collapse.mt-2
+        | Periods and Deadlines are the key concepts sustaining the design of most real-time systems. At the same time, networking, security, and artificial intelligence are usually seen as add-ons or secondary design requirements. This strategy has proved effective and has been reinforced since the 60s. On the other hand, safety-critical cyber-physical systems, such as autonomous vehicles and automated factories, must handle gigantic flows of data that must be processed in real-time to tackle safety in decision loops. Nonetheless, the safety of such systems is not limited to time and results correctness. Instead, it must also consider the plausibility of data originating from a sensor or AI, the data temporal validity to the system, the security protocols in place, and often the communication between distributed systems, possibly facing the challenges of wireless communication. In this sense, we must learn to design and implement such systems around the data they handle instead of the tasks they run. This talk will cover the main challenges faced while designing modern safety-critical cyber-physical systems and how a data-driven design might address such challenges.
