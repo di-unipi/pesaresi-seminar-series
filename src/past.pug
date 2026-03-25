@@ -91,3 +91,19 @@
   .col-md-7
     p.abstract#talk-1c8b9646ee51a4edb38b8d8196a67048.collapse.mt-2
         | Message-passing Graph Neural Networks have become a dominant paradigm for learning on graphs. At the same time, a growing body of work describes their limitations through notions such as oversmoothing, oversquashing, heterophily, and long-range information loss. While these concepts are widely used, their definitions and explanations often overlap. In this talk, we revisit these failure modes from multiple perspectives and ask a central question: what exactly breaks when deep message passing fails? We examine how these phenomena are defined and measured, and discuss whether commonly accepted explanations truly isolate the underlying mechanisms. Instead of proposing a new technique, the goal is to understand why deep message passing can struggle, and to open a discussion that connects graph learning with ideas from different areas.
+.row.project
+  .col-md-2.col-3
+    h3.mb-0 20th
+    h5.month.mb-0 March
+    p 16:00-17:00
+  .col-md-7.col-9
+    p.author #[span.me Leonardo Stoppani]
+    h4.title.mb-1
+      | Beyond the Process: Guiding Diffusion Models Under Constraints
+    .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
+      
+      button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#talk-3af86557bd428f358e99aed43e52a9f3",aria-expanded="false",aria-controls="talk-3af86557bd428f358e99aed43e52a9f3")
+        | #[i.bi.bi-file-earmark-text-fill] Abstract
+  .col-md-7
+    p.abstract#talk-3af86557bd428f358e99aed43e52a9f3.collapse.mt-2
+        | Diffusion models are powerful generative tools, but in many structured domains realism is not enough: outputs must also satisfy explicit constraints. This seminar introduces the basics of diffusion models and examines how they can be guided toward valid solutions under geometric, relational, and symbolic requirements. Using floorplan generation as a running example, we explore methods such as conditional guidance, projected diffusion, and neurosymbolic approaches, while highlighting the trade-off between validity and diversity, especially in few-shot and out-of-distribution settings. The talk concludes by arguing that the real challenge is not just generating realistic samples, but combining probabilistic generation with stronger guarantees of correctness.
